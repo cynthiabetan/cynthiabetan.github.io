@@ -890,6 +890,18 @@
         display: flex;
       }
 
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
       .hero h1 {
         font-size: 2.75rem;
       }
@@ -1435,6 +1447,14 @@
         navbar.classList.remove('scrolled');
       }
     });
+
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const navLinks = document.querySelector(".nav-links");
+    if (mobileMenu && navLinks) {
+      mobileMenu.addEventListener("click", function() {
+        navLinks.classList.toggle("active");
+      });
+    }
   </script>
 </body>
 </html>
